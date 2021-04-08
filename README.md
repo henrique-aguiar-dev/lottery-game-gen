@@ -1,16 +1,17 @@
 # lottery-game-gen
-*************************************JAVASCRIPT**************************************************
-* -------------------Training project / projeto de treinamento-----------------------------------
+*************************************JAVASCRIPT*******************************************
+* -------------------Training project / projeto de treinamento----------------------------
 *
-* -------------Lottery game generator / Gerador de jogos para loterias---
-* By: Henrique, L. - https://github.com/ApiLogik
-* -----------------------------------------------------------------------
+* -------------Lottery game generator / Gerador de jogos para loterias--------------------
+* By: Henrique, L. - https://github.com/
+*
+* ---------------------------------ENG--------------------------------------
 *
 * Developed based on the official Brazilian lotteries;
 *
 * Possible to change business rules to fit different lottery types;
 *
-* ----------------------------------------------PT-BR-------------------------------------------------
+* ----------------------------------------------PT-BR-------------------------------------
 * 
 * Desenvolvido com base nas loterias oficiais da Caixa Econômica Federal - Brasil;
 *
