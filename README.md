@@ -4,6 +4,8 @@
 *
 * -------------Lottery game generator / Gerador de jogos para loterias--------------------
 * By: Henrique, L. - https://github.com/ApiLogik
+* 
+* https://apilogik.github.io/lottery-game-gen/
 *
 * ----------------------------------------ENG---------------------------------------------
 *
