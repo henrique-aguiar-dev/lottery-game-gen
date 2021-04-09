@@ -1,0 +1,110 @@
+:root {
+	--primary-color: rgb(39, 180, 82);
+	--primary-color-darker: rgb(20, 102, 45);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: 0;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	background: url("../media/bglottery.webp"), #2e2e2e;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-blend-mode: overlay;
+	background-attachment: fixed;
+	font-family: sans-serif;
+}
+
+h1 {
+	font-size: 30px;
+	margin: 20px 0;
+}
+
+h2 {
+	font-size: 22px;
+	margin: 10px 0;
+}
+
+p {
+	margin: 10px 0;
+}
+
+.container {
+	max-width: 640px;
+	margin: 50px auto;
+	background: #fff;
+	padding: 20px;
+	border-radius: 10px;
+}
+
+form input,
+form button,
+select {
+	display: block;
+	width: 150px;
+	margin-bottom: 15px;
+}
+
+label {
+	width: 100%;
+}
+
+form input {
+	font-size: 20px;
+	height: 40px;
+	padding: 0 20px;
+}
+
+form input:focus {
+	outline: 1px solid var(--primary-color);
+}
+
+form input[type="submit"],
+button.copy{
+	border: none;
+	background: var(--primary-color);
+	color: #fff;
+	font-size: 18px;
+	font-weight: 700;
+	height: 50px;
+	cursor: pointer;
+	margin-top: 30px;
+	display: inline-block;
+}
+
+form input[type="submit"]:hover,
+button.copy:hover {
+	background: var(--primary-color-darker);
+}
+
+button.copy {
+	margin-left: 30px;
+	display: none;
+}
+
+.result {
+	width: 100%;
+	border: 1px solid #ccc;
+	display: none;
+}
+
+.result p {
+	margin: 7px 0;
+}
+
+.box-footer {
+	text-align: right;
+}
+.box-footer p,
+.box-footer a {
+	font-size: 8px;
+	color: black;
+}
