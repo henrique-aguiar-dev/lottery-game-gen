@@ -1,5 +1,5 @@
 # lottery-game-gen
-*************************************JAVASCRIPT*******************************************
+*************************************VANILLA JAVASCRIPT*******************************************
 * -------------------Training project / projeto de treinamento----------------------------
 *
 * -------------Lottery game generator / Gerador de jogos para loterias--------------------
