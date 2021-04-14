@@ -32,6 +32,6 @@
 * 1.0.0 - Generate combinations by splitting half of each game:
 * Demo: game1 [x, x, x, o, o, o], game2 [x, x, x, o, o, o] = comb1 [o, o, o, o, o, o]
 *
-* 1.2.0 - Added one more combination type: 2 by 2: Split all games in groups of 3 elements,
+* 1.2.0 - Added one more combination type (only 6 numbers games, for now): 2 by 2: Split all games in groups of 3 elements,
 * then get 2 elements of each game;
 * Demo: game1 [o, o, x, x, x, x], game2 [x, x, o, o, x, x], game3 [x, x, x, x, o, o] = comb1 [o, o, o, o, o, o]
