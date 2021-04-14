@@ -24,3 +24,10 @@
 *
 * Testando com apenas uma lógica para combinações. Possível implementação posterior de outras
 * regras para mais tipos de combinações;
+*
+*
+* ----------------------------------------Versions----------------------------------------
+* 1.0.0 - Generate combinations by splitting half of each game;
+*
+* 1.2.0 - Added one more combination type: 2 by 2: Split all games in groups of 3 elements,
+* then get 2 elements of each game - [o, o, x, x, x, x], [x, x, o, o, x, x], [x, x, x, x, o, o]
