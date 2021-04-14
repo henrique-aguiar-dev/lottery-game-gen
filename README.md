@@ -7,6 +7,8 @@
 * 
 * https://apilogik.github.io/lottery-game-gen/
 *
+* Version: 1.2.0
+*
 * ----------------------------------------ENG---------------------------------------------
 *
 * Developed based on the official Brazilian lotteries;
