@@ -310,7 +310,9 @@ var Game = /*#__PURE__*/function () {
         });
 
         if (!match1w2 && !match2w3) {
-          _this2.allComb.push(actualComb[0].concat(actualComb[1], actualComb[2]));
+          _this2.allComb.push(actualComb[0].concat(actualComb[1], actualComb[2]).sort(function (a, b) {
+            return a - b;
+          }));
         }
       }; //Split all games in groups of 3 elements
 
