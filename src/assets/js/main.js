@@ -26,7 +26,6 @@ const createGames = () => {
 	const game = new Game(type, games);
 	const allGames = game.generateGames();
 
-	//console.log(allGames)
 	showGames(allGames);
 }
 
