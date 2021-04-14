@@ -60,8 +60,8 @@ export class Game {
 		}
 	}
 
-	//Mount the combinations by inverting half of each game and concatenating again
-	_generateComb() {
+	//Mount the combinations by splitting each game, reversing the order (up/down) and concatenating again;
+	_generateHalfComb() {
 		const arrPart1 = [];
 		const arrPart2 = [];
 		const slicer = Math.ceil(this.limit / 2);
@@ -96,6 +96,35 @@ export class Game {
 		}
 	}
 
+	_generate2by2Comb() {
+		const gamesLength = this.games - (this.games % 3);//Array length divisible by 3 - each comb need 3 games
+
+		//Get 2 elements of each game - [o, o, x, x, x, x], [x, x, o, o, x, x], [x, x, x, x, o, o]
+		const combGen = group => {
+			let actualComb = [];
+			let cut = 0;
+			for (let i = 0; i < 3; i++) {
+				actualComb.push(group[i].slice(cut, cut + 2));
+				cut < 4 ? cut += 2 : cut = 0;
+			}
+			/*
+			* Repeated numbers = no concatenation; discard combination;
+			*/
+			let match1w2 = actualComb[0].find(value => actualComb[1].includes(value));
+			let match2w3 = actualComb[1].find(value => actualComb[2].includes(value));
+
+			if (!match1w2 && !match2w3) {
+				this.allComb.push(actualComb[0].concat(actualComb[1], actualComb[2]))
+			}
+		}
+
+		//Split all games in groups of 3 elements
+		for (let groupSize = 3; groupSize <= gamesLength; groupSize += 3) {
+			combGen(this.mainGames.slice(groupSize - 3, groupSize))
+		}
+
+	}
+
 	_stringfyAndFormat(arrToStr) {
 		arrToStr = arrToStr.forEach((each, index) => {
 			arrToStr[index] = each.join(' ');
@@ -104,7 +133,7 @@ export class Game {
 
 	_filterRepeated(mainGames, allComb) {
 		allComb.find((value, index) => {
-			if(mainGames.includes(value)){
+			if (mainGames.includes(value)) {
 				allComb = allComb.splice(index, 1);
 			}
 		})
@@ -117,7 +146,8 @@ export class Game {
 			this.mainGames.push(this.actualGame);
 		}
 
-		this.mainGames.length > 1 ? this._generateComb() : false;
+		this.mainGames.length > 1 ? this._generateHalfComb() : false;
+		this.mainGames.length > 2 && this.limit === 6 ? this._generate2by2Comb() : false;
 
 		this._stringfyAndFormat(this.mainGames);
 		this._stringfyAndFormat(this.allComb);
@@ -128,5 +158,5 @@ export class Game {
 
 		return this.allGames;
 	}
-}
-//-------------------------------
+
+}//end - class Game
