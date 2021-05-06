@@ -1,4 +1,4 @@
-# lottery-game-gen 1.2.0
+# lottery-game-gen 1.2.1
 *************************************VANILLA JAVASCRIPT*******************************************
 * -------------------Training project / projeto de treinamento----------------------------
 *
