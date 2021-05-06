@@ -36,7 +36,7 @@ const copyAll = () => {
 	);
 }
 
-btnCopy.addEventListener('click', () => copyAll());
+btnCopy.addEventListener('click', copyAll);
 
 form.addEventListener('submit', e => {
 	e.preventDefault();
