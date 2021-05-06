@@ -96,25 +96,24 @@ export class Game {
 		}
 	}
 
-	_generate2by2Comb() {
+	//Get 2 elements of each game (6 numbers) OR 5 elements of each game (15 numbers)
+	_generateExtraComb(size) {
 		const gamesLength = this.games - (this.games % 3);//Array length divisible by 3 - each comb need 3 games
 
-		//Get 2 elements of each game - [o, o, x, x, x, x], [x, x, o, o, x, x], [x, x, x, x, o, o]
 		const combGen = group => {
 			let actualComb = [];
 			let cut = 0;
 			for (let i = 0; i < 3; i++) {
-				actualComb.push(group[i].slice(cut, cut + 2));
-				cut < 4 ? cut += 2 : cut = 0;
+				actualComb.push(group[i].slice(cut, cut + size));
+				cut < size * 2 ? cut += size : cut = 0;
 			}
-			/*
-			* Repeated numbers = no concatenation; discard combination;
-			*/
+			
+			//Repeated numbers = no concatenation; discard combination;
 			let match1w2 = actualComb[0].find(value => actualComb[1].includes(value));
 			let match2w3 = actualComb[1].find(value => actualComb[2].includes(value));
 
 			if (!match1w2 && !match2w3) {
-				this.allComb.push(actualComb[0].concat(actualComb[1], actualComb[2]))
+				this.allComb.push(actualComb[0].concat(actualComb[1], actualComb[2]).sort((a, b) => a - b));
 			}
 		}
 
@@ -122,7 +121,6 @@ export class Game {
 		for (let groupSize = 3; groupSize <= gamesLength; groupSize += 3) {
 			combGen(this.mainGames.slice(groupSize - 3, groupSize))
 		}
-
 	}
 
 	_stringfyAndFormat(arrToStr) {
@@ -147,7 +145,8 @@ export class Game {
 		}
 
 		this.mainGames.length > 1 ? this._generateHalfComb() : false;
-		this.mainGames.length > 2 && this.limit === 6 ? this._generate2by2Comb() : false;
+		this.mainGames.length > 2 && this.limit === 6 ? this._generateExtraComb(2) : false;
+		this.mainGames.length > 2 && this.limit === 15 ? this._generateExtraComb(5) : false;
 
 		this._stringfyAndFormat(this.mainGames);
 		this._stringfyAndFormat(this.allComb);
