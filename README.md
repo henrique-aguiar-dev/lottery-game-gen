@@ -3,9 +3,9 @@
 * -------------------Training project / projeto de treinamento----------------------------
 *
 * -------------Lottery game generator / Gerador de jogos para loterias--------------------
-* By: Henrique, L. - https://github.com/ApiLogik
+* By: Henrique, L. - https://github.com/henrique-aguiar-dev
 * 
-* https://apilogik.github.io/lottery-game-gen/
+* https://henrique-aguiar-dev.github.io/lottery-game-gen/
 *
 * Version: 1.2.0
 *
